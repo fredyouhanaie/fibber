@@ -15,8 +15,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    container:
-      image: erlang:22.0.7
+    strategy:
+      matrix:
+        erlang: [22.0.7, 24.2]
 
     steps:
     - uses: actions/checkout@v3

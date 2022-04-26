@@ -1,5 +1,7 @@
 # fibber
 
+[![Erlang CI](https://github.com/fredyouhanaie/fibber/actions/workflows/erlang.yml/badge.svg)](https://github.com/fredyouhanaie/fibber/actions/workflows/erlang.yml)
+
 A simple module to compute the Fibonacci numbers.
 
 The real purpose of the module is in fact to experiment with the

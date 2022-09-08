@@ -1,0 +1,20 @@
+%% -*- mode:html -*-
+
+@author Fred Youhanaie <fyrlang@anydata.co.uk>
+@copyright 2022 Fred Youhanaie
+@version 0.1.0
+
+@doc
+
+<h3>Introduction</h3>
+
+<p>
+  A simple module to compute the Fibonacci numbers.
+</p>
+
+<p>
+  The real purpose of the module is in fact to experiment with the
+  various configuration options of GitHub Actions.
+</p>
+
+@end

@@ -23,13 +23,13 @@ fib(N) when is_integer(N) andalso N >= 0 ->
 
 fib(N, M0) ->
     case maps:find(N, M0) of
-	{ok, F} ->
-	    {F, M0};
-	error ->
-	    {F1, M1} = fib(N-1, M0),
-	    {F2, M2} = fib(N-2, M1),
-	    F = F1+F2,
-	    {F, maps:put(N, F, M2)}
+        {ok, F} ->
+            {F, M0};
+        error ->
+            {F1, M1} = fib(N-1, M0),
+            {F2, M2} = fib(N-2, M1),
+            F = F1+F2,
+            {F, maps:put(N, F, M2)}
     end.
 
 %%-------------------------------------------------------------------

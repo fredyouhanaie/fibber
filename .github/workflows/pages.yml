@@ -11,12 +11,10 @@ on:
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-#permissions:
-#  contents: read
-#  pages: write
-#  id-token: write
-
-permissions: write-all
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 # Allow one concurrent deployment
 concurrency:
@@ -39,6 +37,8 @@ jobs:
           destination: ./_site
       - name: generate edoc
         run: rebar3 edoc
+      - name: show edoc files
+        run: ls -la edoc
       - name: where am I
         run: pwd
       - name: explore _site

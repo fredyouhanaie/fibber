@@ -36,23 +36,13 @@ jobs:
           source: ./docs
           destination: ./_site
 
-      - name: explore _site 1
-        run: ls -la ./_site
-      - name: take ownership of site
+      - name: take ownership of the site files
         run: sudo chown -R runner _site
-      - name: explore _site 2
-        run: ls -la ./_site
-
       - name: generate edoc
         run: rebar3 edoc
-      - name: show edoc files
-        run: ls -la doc
-      - name: where am I
-        run: pwd
-      - name: smoke test
-        run: touch ./_site/hello
-      - name: copy doc files
+      - name: copy the doc files
         run: cp -r ./doc ./_site/edoc
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 

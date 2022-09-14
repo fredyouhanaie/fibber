@@ -38,10 +38,16 @@ jobs:
 
       - name: take ownership of the site files
         run: sudo chown -R runner _site
-      - name: generate edoc
+
+      - name: generate the public edoc
         run: rebar3 edoc
       - name: copy the doc files
         run: cp -r ./doc ./_site/edoc
+
+      - name: generate the full edoc
+        run: rebar3 as dev edoc
+      - name: copy the doc files
+        run: cp -r ./doc ./_site/edoc_dev
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

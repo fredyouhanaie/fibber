@@ -2,4 +2,7 @@
 
 We're playing about with github pages.
 
-Follow this [link](edoc/index.html) module docs.
+Follow these links for the module docs:
+
+* [public functions](edoc/index.html)
+* [pprivate functions](edoc_dev/index.html)

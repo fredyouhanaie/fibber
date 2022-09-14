@@ -37,8 +37,12 @@ jobs:
           destination: ./_site
       - name: generate edoc
         run: rebar3 edoc
+      - name: where am I
+        run: pwd
+      - name: smoke test
+        run: touch ./_site/hello
       - name: copy doc files
-        run: cp -r doc _site/edoc
+        run: cp -r ./doc ./_site/edoc
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 

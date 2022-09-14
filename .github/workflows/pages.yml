@@ -39,7 +39,7 @@ jobs:
         run: rebar3 edoc
       - name: where am I
         run: pwd
-      - name explore _site
+      - name: explore _site
         run: ls -la ./_site
       - name: smoke test
         run: touch ./_site/hello

@@ -37,6 +37,8 @@ jobs:
           destination: ./_site
       - name: generate edoc
         run: rebar3 edoc
+      - name: copy doc files
+        run: cp -r doc _site/edoc
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 

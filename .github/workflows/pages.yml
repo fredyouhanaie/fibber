@@ -38,7 +38,7 @@ jobs:
       - name: generate edoc
         run: rebar3 edoc
       - name: show edoc files
-        run: ls -la edoc
+        run: ls -la doc
       - name: where am I
         run: pwd
       - name: explore _site

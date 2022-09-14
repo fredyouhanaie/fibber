@@ -39,7 +39,7 @@ jobs:
       - name: explore _site 1
         run: ls -la ./_site
       - name: take ownership of site
-        run: chown -R runner _site
+        run: sudo chown -R runner _site
       - name: explore _site 2
         run: ls -la ./_site
 

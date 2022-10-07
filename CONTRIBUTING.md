@@ -1,4 +1,4 @@
-# Contributing to the projects
+# Contributing to the project
 
 Feedback and contributions to the project are very welcome.
 

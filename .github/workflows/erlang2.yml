@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  erlang_job:
+    runs-on: ubuntu-latest
+    name: run the test
+    steps:
+      - name: Erlang action step
+        id: rebar3
+        uses: fredyouhanaie/actions/erlang/latest@main
+        with:
+          command: eunit

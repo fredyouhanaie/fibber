@@ -6,11 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     container: erlang:alpine
     steps:
-      - name: where are we
+      - name: where are we (1)
         run: uname -a
       - name: checkout
         uses: actions/checkout@v3
       - name: Erlang dialyzer
         run: rebar3 dialyzer
+      - name: where are we (2)
+        run: uname -a
       - name: Erlang unit tests
         run: rebar3 eunit

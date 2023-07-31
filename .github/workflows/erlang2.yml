@@ -4,8 +4,10 @@ jobs:
   erlang_job:
     name: run the tests in a container
     runs-on: ubuntu-latest
-    ## container: erlang:alpine
+    container: erlang:alpine
     steps:
+      - name: where are we
+        run: uname -a
       - name: checkout
         uses: actions/checkout@v3
       - name: Erlang dialyzer

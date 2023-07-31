@@ -2,13 +2,13 @@ on: [push]
 
 jobs:
   erlang_job:
+    name: run the tests in a container
     runs-on: ubuntu-latest
-    name: run the test
+    container: erlang:alpine
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: Erlang action step
-        id: rebar3
-        uses: fredyouhanaie/actions/erlang/latest@main
-        with:
-          command: eunit
+      - name: Erlang dialyzer
+        run: rebar3 dialyzer
+      - name: Erlang unit tests
+        run: rebar3 eunit

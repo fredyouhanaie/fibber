@@ -4,7 +4,7 @@ jobs:
   erlang_job:
     name: run the tests in a container
     runs-on: ubuntu-latest
-    container: erlang:alpine
+    ## container: erlang:alpine
     steps:
       - name: checkout
         uses: actions/checkout@v3

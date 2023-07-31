@@ -4,15 +4,23 @@ jobs:
   erlang_job:
     name: run the tests in a container
     runs-on: ubuntu-latest
-    container: erlang:alpine
+
+    strategy:
+      matrix:
+        release:
+        - 26-alpine
+        - 25-alpine
+        - 24-alpine
+
+    container: erlang:${{ release }}
     steps:
-      - name: where are we (1)
-        run: uname -a
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: Erlang dialyzer
-        run: rebar3 dialyzer
-      - name: where are we (2)
-        run: uname -a
-      - name: Erlang unit tests
-        run: rebar3 eunit
+    - name: where are we (1)
+      run: uname -a
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: Erlang dialyzer
+      run: rebar3 dialyzer
+    - name: where are we (2)
+      run: uname -a
+    - name: Erlang unit tests
+      run: rebar3 eunit

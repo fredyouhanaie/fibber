@@ -6,7 +6,7 @@ jobs:
     name: run the test
     steps:
       - name: checkout
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       - name: Erlang action step
         id: rebar3
         uses: fredyouhanaie/actions/erlang/latest@main

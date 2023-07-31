@@ -12,7 +12,7 @@ jobs:
         - 25-alpine
         - 24-alpine
 
-    container: erlang:${{ release }}
+    container: erlang:${{ matrix.release }}
     steps:
     - name: where are we (1)
       run: uname -a

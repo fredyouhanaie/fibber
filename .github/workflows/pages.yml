@@ -40,8 +40,8 @@ jobs:
           source: ./gh_pages
           destination: ./_site
 
-      - name: take ownership of the site files
-        run: sudo chown -R runner _site
+      ## - name: take ownership of the site files
+      ##   run: sudo chown -R runner _site
 
       - name: generate the public edoc
         run: rebar3 edoc

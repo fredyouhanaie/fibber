@@ -27,8 +27,8 @@ jobs:
     container:
       image: erlang:26-alpine
       volumes:
-        - gh_pages:gh_pages
-        - _site:_site
+        - /gh_pages:/gh_pages
+        - /_site:/_site
     steps:
       - name: Checkout
         uses: actions/checkout@v3

@@ -25,7 +25,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: erlang:26-alpine
+      image: erlang:26-slim
       volumes:
         - /gh_pages:/gh_pages
         - /_site:/_site
@@ -40,8 +40,8 @@ jobs:
           source: ./gh_pages
           destination: ./_site
 
-      ## - name: take ownership of the site files
-      ##   run: sudo chown -R runner _site
+      - name: take ownership of the site files
+        run: sudo chown -R runner _site
 
       - name: generate the public edoc
         run: rebar3 edoc

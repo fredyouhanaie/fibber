@@ -29,6 +29,7 @@ jobs:
       volumes:
         - /gh_pages:/gh_pages
         - /_site:/_site
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -39,9 +40,6 @@ jobs:
         with:
           source: ./gh_pages
           destination: ./_site
-
-      ## - name: take ownership of the site files
-      ##   run: sudo chown -R runner _site
 
       - name: generate the public edoc
         run: rebar3 edoc

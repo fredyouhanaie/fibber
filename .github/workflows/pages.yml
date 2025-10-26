@@ -42,7 +42,7 @@ jobs:
           destination: ./_site
 
       - name: install sudo
-        run: apk add sudo
+        run: apt-get install sudo
 
       - name: take ownership of the site files
         run: sudo chown -R runner _site

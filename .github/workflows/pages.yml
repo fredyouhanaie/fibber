@@ -41,6 +41,9 @@ jobs:
           source: ./gh_pages
           destination: ./_site
 
+      - name: install sudo
+        run: apk add sudo
+
       - name: take ownership of the site files
         run: sudo chown -R runner _site
 

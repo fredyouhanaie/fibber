@@ -41,14 +41,14 @@ jobs:
           source: ./gh_pages
           destination: ./_site
 
-      - name: prepare to install sudo
-        run: apt-get update
-
-      - name: install sudo
-        run: apt-get install sudo
-
-      - name: take ownership of the site files
-        run: sudo chown -R runner _site
+##      - name: prepare to install sudo
+##        run: apt-get update
+##
+##      - name: install sudo
+##        run: apt-get install sudo
+##
+##      - name: take ownership of the site files
+##        run: sudo chown -R runner _site
 
       - name: generate the public edoc
         run: rebar3 edoc

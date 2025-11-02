@@ -1,4 +1,13 @@
-on: [push]
+name: Erlang CI
+
+on:
+  push:
+    branches: [ trunk ]
+  pull_request:
+    branches: [ trunk ]
+
+permissions:
+  contents: read
 
 jobs:
   erlang_job:
@@ -8,19 +17,23 @@ jobs:
     strategy:
       matrix:
         release:
+        - 28-alpine
+        - 27-alpine
         - 26-alpine
-        - 25-alpine
-        - 24-alpine
 
     container: erlang:${{ matrix.release }}
     steps:
     - name: where are we (1)
       run: uname -a
+
     - name: checkout
       uses: actions/checkout@v3
+
     - name: Erlang dialyzer
       run: rebar3 dialyzer
+
     - name: where are we (2)
       run: uname -a
+
     - name: Erlang unit tests
       run: rebar3 eunit

@@ -5,7 +5,7 @@
 A simple module to compute the Fibonacci numbers.
 
 The real purpose of the module is in fact to experiment with the
-various configuration options of GitHub Actions.
+various configuration options of GitHub and Codeberg Actions.
 
 ## Build
 

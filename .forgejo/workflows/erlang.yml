@@ -3,8 +3,6 @@ name: Erlang CI
 on:
   push:
     branches: [ trunk ]
-  pull_request:
-    branches: [ trunk ]
 
 permissions:
   contents: read
@@ -21,7 +19,8 @@ jobs:
         - 27-alpine
         - 26-alpine
 
-    container: erlang:${{ matrix.release }}
+    container:
+      image: erlang:${{ matrix.release }}
     steps:
     - name: where are we (1)
       run: uname -a

@@ -3,16 +3,15 @@ when:
   - event:  push
     branch: trunk
 
-strategy:
-  matrix:
-    release:
-      - 28-alpine
-      - 27-alpine
-      - 26-alpine
+matrix:
+  release:
+    - 28-alpine
+    - 27-alpine
+    - 26-alpine
 
 steps:
   - name: erlang_job
-    image: erlang:${ release }
+    image: erlang:${release}
 
     commands:
     - uname -a

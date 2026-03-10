@@ -1,0 +1,20 @@
+
+when:
+  - event:  push
+    branch: trunk
+
+strategy:
+  matrix:
+    release:
+      - 28-alpine
+      - 27-alpine
+      - 26-alpine
+
+steps:
+  - name: erlang_job
+    image: erlang:${ release }
+
+    commands:
+    - uname -a
+    - rebar3 dialyzer
+    - rebar3 eunit
